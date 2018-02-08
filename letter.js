@@ -1,7 +1,14 @@
 var userGuess = process.argv;
-var wordsDude = 'moist';
+var wordsDude = ['moist', 'spaceship', 'fart', 'guitar', 'game', 'leakage', 'bulletproof', 'controller', 'instructions', 'annotated',];
 var blanksArray = [];
 var splitWordArray = [];
+
+function splitChosenWord() {
+    var wordIndex = Math.floor(Math.random() * 9) + 1  
+    console.log(wordIndex);
+    var chosenWord = wordsDude[wordIndex];
+    console.log(chosenWord);
+}
 
 
 function createBlanks() {
@@ -16,11 +23,16 @@ function createBlanks() {
 
 function Letter(userGuess) {
     this.stringValue = userGuess.toString();
-    letterGuessed: false
+    this.letterGuessed = false
     this.checkLetter = function (userGuess) {
-        if 
+        if (letterGuessed = true) {
+            console.log('correct');
+        } if (letterGuessed === false) {
+            console.log('incorrect')
+        }
     }
 
 
 }
-createBlanks();
+// createBlanks();
+splitChosenWord();
