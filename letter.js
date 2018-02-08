@@ -8,31 +8,33 @@ function splitChosenWord() {
     console.log(wordIndex);
     var chosenWord = wordsDude[wordIndex];
     console.log(chosenWord);
+    splitWordArray = Array.from(chosenWord);
+    console.log(splitWordArray)
 }
 
 
-function createBlanks() {
-    var charactersDude = Array.from(wordsDude);
-    splitWordArray = charactersDude
-    console.log(charactersDude)
-    for (var i = 0; i < charactersDude.length; i++) {
-        blanksArray.push('_');
-    }
-    console.log(blanksArray);
-}
+// function createBlanks() {
+//     var charactersDude = Array.from(wordsDude);
+//     splitWordArray = charactersDude
+//     console.log(charactersDude)
+//     for (var i = 0; i < charactersDude.length; i++) {
+//         blanksArray.push('_');
+//     }
+//     console.log(blanksArray);
+// }
 
-function Letter(userGuess) {
-    this.stringValue = userGuess.toString();
-    this.letterGuessed = false
-    this.checkLetter = function (userGuess) {
-        if (letterGuessed = true) {
-            console.log('correct');
-        } if (letterGuessed === false) {
-            console.log('incorrect')
-        }
-    }
+// function Letter(userGuess) {
+//     this.stringValue = userGuess.toString();
+//     this.letterGuessed = false
+//     this.checkLetter = function (userGuess) {
+//         if (letterGuessed = true) {
+//             console.log('correct');
+//         } if (letterGuessed === false) {
+//             console.log('incorrect')
+//         }
+//     }
 
 
-}
+// }
 // createBlanks();
 splitChosenWord();
