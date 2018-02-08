@@ -7,5 +7,25 @@ var Letter = require('./Letter');
 var Word = require('./word.js');
 var inquirer = require('inquirer');
 var prompt = require('prompt');
+var wordsDude = ['moist', 'spaceship', 'fart', 'guitar', 'game', 'leakage', 'bulletproof', 'controller', 'instructions', 'annotated',];
+var blanksArray = [];
+var splitWordArray = [];
+function chooseWord() {
+    var wordIndex = Math.floor(Math.random() * 9) + 1;
+    var chosenWord =  wordsDude[wordIndex];
+    console.log('word chosen');
+    console.log(chosenWord); 
+}
+chooseWord();
 
-var userGuess = new Letter(process.argv[2])
+//inquirer
+inquirer.prompt([
+    {
+        name: "guessedLetter",
+        message: 'Please Guess a Letter'
+    }
+]).then(function(answers){
+var guess = answers.guessedLetter
+var letter = new Letter(guess)
+console.log(letter);
+})
