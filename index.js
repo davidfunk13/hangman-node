@@ -10,15 +10,15 @@ var prompt = require('prompt');
 var wordsDude = ['moist', 'spaceship', 'fart', 'guitar', 'game', 'leakage', 'bulletproof', 'controller', 'instructions', 'annotated',];
 var blanksArray = [];
 var splitWordArray = [];
+var guessedLetters = []
 function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
     var chosenWord =  wordsDude[wordIndex];
-    console.log('word chosen');
-    console.log(chosenWord); 
+    var word = new Word(chosenWord);
+    console.log(word)
 }
 chooseWord();
-
-//inquirer
+inquirer
 inquirer.prompt([
     {
         name: "guessedLetter",
@@ -27,5 +27,5 @@ inquirer.prompt([
 ]).then(function(answers){
 var guess = answers.guessedLetter
 var letter = new Letter(guess)
-console.log(letter);
+console.log(letter)
 })
