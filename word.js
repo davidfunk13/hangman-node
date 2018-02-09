@@ -7,17 +7,22 @@
 //   * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
 var Letter = require('./letter.js');
 
-var Word = function(chosenWord) {
+var Word = function (chosenWord) {
     this.word = chosenWord;
     this.charArray = Array.from(this.word);
     this.letterObjectsArray = [];
+    this.returnString = function () {
+        for (var i = 0; i < letterObjectsArray.length; i++) {
+            console.log(letterObjectsArray[i].beenGussed());
+        }
+    }
+    for (var i = 0; i < this.charArray.length; i++) {
+        // console.log(this.charArray[i])
+        newLetter = new Letter(this.charArray[i])
+        this.letterObjectsArray.push(newLetter);
 
-for (var i = 0; i < this.charArray.length; i++){
-    console.log(this.charArray[i])
-    newLetter = new Letter(this.charArray[i])
-    this.letterObjectsArray.push(newLetter);
-
-}   
-
+    }
+    console.log(this.letterObjectsArray)
 }
+// Word.returnString();
 module.exports = Word;

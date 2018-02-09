@@ -15,7 +15,7 @@ function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
     var chosenWord =  wordsDude[wordIndex];
     var word = new Word(chosenWord);
-    console.log(word)
+    // console.log(word)
 }
 chooseWord();
 inquirer
@@ -27,5 +27,5 @@ inquirer.prompt([
 ]).then(function(answers){
 var guess = answers.guessedLetter
 var letter = new Letter(guess)
-console.log(letter)
+letter.guessCheck();
 })

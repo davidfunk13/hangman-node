@@ -1,18 +1,14 @@
-
-var Letter = function(guess) {
+var Letter = function (guess) {
     this.stringValue = guess;
     this.beenGuessed = false;
     this.guessCheck = function (guess) {
         if (this.beenGuessed === true) {
-            console.log(this.stringValue);
+            console.log('been guessed');
         }
-        if (this.beenGuessed === false){
-            console.log('_')
+        if (this.beenGuessed === false) {
+            this.beenGuessed = true;
+            console.log('now set to true');
         }
-    }
-    this.printLetterObject = function() {
-        console.log( this.stringValue);
-        console.log(this.beenGuessed);
     }
 }
-module.exports = Letter;
+module.exports = Letter
