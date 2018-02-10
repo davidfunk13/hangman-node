@@ -2,11 +2,12 @@ var Letter = function (char) {
     this.stringValue = char;
     this.isVisible = false;
     this.setBoolean = function (char) {
-        if (this.isVisible) {
+        if (!this.isVisible) {
             console.log('setboolean function hit')
-            this.isVisible = false;
+            this.isVisible = true;
             console.log(`Boolean ${this.isVisible}`);
         }
+
     }
 }
 Letter.prototype.toString = function () {

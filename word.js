@@ -24,6 +24,11 @@ var Word = function (chosenWord) {
     //     }
 
     // }
+    this.check = function (char) {
+        for (var i = 0; i < this.letterObjectsArray.length; i++) {
+            console.log(letterObjectsArray[i])
+        }
+    }
 }
 Word.prototype.toString = function () {
     // console.log('hitting this function')
