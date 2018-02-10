@@ -25,7 +25,10 @@ var Word = function (chosenWord) {
     }
     this.toString = function () {
         console.log('hitting this function')
-        this.letterObjectsArray.join();
+        for (var i = 0; i < letterObjectsArray.length; i++) {
+            console.log(letterObjectsArray[i])
+        }
+        // this.letterObjectsArray.join();
     }
 }
 // Word.prototype.toString = function () {
