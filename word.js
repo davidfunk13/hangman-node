@@ -22,7 +22,8 @@ var Word = function (chosenWord) {
         this.letterObjectsArray.push(newLetter);
 
     }
-    console.log(this.letterObjectsArray)
 }
-// Word.returnString();
+Word.prototype.toString = function () {
+    this.letterObjectsArray.join();
+}
 module.exports = Word;
