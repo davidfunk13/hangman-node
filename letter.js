@@ -29,12 +29,12 @@ var Letter = function (char) {
     // }
 }
 Letter.prototype.toString = function () {
-    
+
     if (this.isVisible) {
         console.log('letter to string function hit')
         return this.stringValue;
     }
-    return '..';
     console.log('tostring is false')
+    return '..';
 }
 module.exports = Letter

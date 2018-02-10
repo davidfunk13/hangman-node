@@ -16,13 +16,14 @@ var Word = function (chosenWord) {
     //         console.log(letterObjectsArray[i].beenGussed());
     //     }
     // }
-    for (var i = 0; i < this.charArray.length; i++) {
+   this.letterObject = function() { for (var i = 0; i < this.charArray.length; i++) {
         // console.log(this.charArray[i])
         newLetter = new Letter(this.charArray[i])
         // console.log(newLetter)
         this.letterObjectsArray.push(newLetter);
 
     }
+}
     // this.toString = function () {
     //     console.log('hitting this function')
     //     for (var i = 0; i < this.letterObjectsArray.length; i++) {
@@ -33,7 +34,7 @@ var Word = function (chosenWord) {
     // }
 }
 Word.prototype.toString = function () {
-    console.log('hitting this function')
+    // console.log('hitting this function')
     console.log(this.letterObjectsArray.join());
 }
 
