@@ -13,13 +13,13 @@ function chooseWord() {
     console.log(word);
 }
 chooseWord();
-inquirer.prompt([
-    {
-        name: "guessedLetter",
-        message: 'Please Guess a Letter'
-    }
-]).then(function (answers) {
-    // var char = answers.guessedLetter
-    // var letter = new Letter(char)
-    // Word.toString();
-})
+// inquirer.prompt([
+//     {
+//         name: "guessedLetter",
+//         message: 'Please Guess a Letter'
+//     }
+// ]).then(function (answers) {
+//     // var char = answers.guessedLetter
+//     // var letter = new Letter(char)
+//     // Word.toString();
+// })
