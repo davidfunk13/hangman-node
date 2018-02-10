@@ -10,7 +10,7 @@ function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
     var chosenWord = wordsDude[wordIndex];
     var word = new Word(chosenWord);
-    console.log(word);
+    word.toString();
 }
 chooseWord();
 // inquirer.prompt([

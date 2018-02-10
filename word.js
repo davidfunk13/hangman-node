@@ -23,18 +23,18 @@ var Word = function (chosenWord) {
         this.letterObjectsArray.push(newLetter);
 
     }
-    this.toString = function () {
-        console.log('hitting this function')
-        for (var i = 0; i < letterObjectsArray.length; i++) {
-            console.log(letterObjectsArray[i])
-        }
-        // this.letterObjectsArray.join();
-    }
+    // this.toString = function () {
+    //     console.log('hitting this function')
+    //     for (var i = 0; i < this.letterObjectsArray.length; i++) {
+    //         console.log(this.letterObjectsArray[i].stringValue)
+    //         console.log(this.letterObjectsArray.join())
+    //     }
+
+    // }
 }
-// Word.prototype.toString = function () {
-//     console.log('hitting this function')
-//     this.letterObjectsArray.join();
-//     // Letter.toString();
-// }
+Word.prototype.toString = function () {
+    console.log('hitting this function')
+    console.log(this.letterObjectsArray.join());
+}
 
 module.exports = Word;
