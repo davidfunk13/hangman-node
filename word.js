@@ -16,8 +16,6 @@ var Word = function (chosenWord) {
     //         console.log(letterObjectsArray[i].beenGussed());
     //     }
     // }
-   this.letterObject = function() { 
-}
     // this.toString = function () {
     //     console.log('hitting this function')
     //     for (var i = 0; i < this.letterObjectsArray.length; i++) {
@@ -36,7 +34,7 @@ Word.prototype.toString = function () {
         this.letterObjectsArray.push(newLetter);
 
     }
-    console.log(this.letterObjectsArray.join());
+   console.log(this.letterObjectsArray.join(' '))
 }
 
 module.exports = Word;
