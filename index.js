@@ -19,7 +19,7 @@ inquirer.prompt([
         message: 'Please Guess a Letter'
     }
 ]).then(function (answers) {
-    var guess = answers.guessedLetter
-    var letter = new Letter(guess)
-    letter.guessCheck();
+    var char = answers.guessedLetter
+    var letter = new Letter(char)
+    // letter.guessCheck();
 })

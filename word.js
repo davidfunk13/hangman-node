@@ -11,19 +11,22 @@ var Word = function (chosenWord) {
     this.word = chosenWord;
     this.charArray = Array.from(this.word);
     this.letterObjectsArray = [];
-    this.returnString = function () {
-        for (var i = 0; i < letterObjectsArray.length; i++) {
-            console.log(letterObjectsArray[i].beenGussed());
-        }
-    }
+    // this.returnString = function () {
+    //     for (var i = 0; i < letterObjectsArray.length; i++) {
+    //         console.log(letterObjectsArray[i].beenGussed());
+    //     }
+    // }
     for (var i = 0; i < this.charArray.length; i++) {
         // console.log(this.charArray[i])
         newLetter = new Letter(this.charArray[i])
+        // console.log(newLetter)
         this.letterObjectsArray.push(newLetter);
 
     }
 }
 Word.prototype.toString = function () {
+    console.log('hitting this function')
     this.letterObjectsArray.join();
 }
+
 module.exports = Word;

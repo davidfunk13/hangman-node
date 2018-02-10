@@ -1,5 +1,6 @@
 var Letter = function (char) {
     this.stringValue = char;
+    console.log(this.stringValue)
     // this.beenGuessed = false;
     this.isVisible = false;
 
@@ -11,13 +12,17 @@ var Letter = function (char) {
 
     //     }
     // }
-    this.setBoolean = function (guess) {
-        if (this.beenGuessed === false)
-        this.beenGuessed = true;
+    this.setBoolean = function (char) {
+        if (this.isVisible) {
+            console.log('setboolean function hit')
+            this.isVisible = false;
+            console.log(`Boolean ${this.isVisible}`);
+        }
     }
 }
 Letter.prototype.toString = function () {
     if (this.isVisible) {
+        console.log('letter to string function hit')
         return this.stringValue;
     }
     return '..';
