@@ -21,5 +21,5 @@ inquirer.prompt([
 ]).then(function (answers) {
     var char = answers.guessedLetter
     var letter = new Letter(char)
-    // letter.guessCheck();
+    letter.toString();
 })

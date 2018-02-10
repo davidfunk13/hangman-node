@@ -19,12 +19,22 @@ var Letter = function (char) {
             console.log(`Boolean ${this.isVisible}`);
         }
     }
-}
-Letter.prototype.toString = function () {
-    if (this.isVisible) {
-        console.log('letter to string function hit')
-        return this.stringValue;
+    this.toString = function () {
+        if (this.isVisible) {
+            console.log('letter to string function hit')
+            return this.stringValue;
+        }
+        console.log('tostring is false');
+        return '_';
     }
-    return '..';
 }
+// Letter.prototype.toString = function () {
+    
+//     if (this.isVisible) {
+//         console.log('letter to string function hit')
+//         return this.stringValue;
+//     }
+//     return '..';
+//     console.log('tostring is false')
+// }
 module.exports = Letter

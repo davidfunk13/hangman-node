@@ -23,10 +23,15 @@ var Word = function (chosenWord) {
         this.letterObjectsArray.push(newLetter);
 
     }
+    this.toString = function () {
+        console.log('hitting this function')
+        this.letterObjectsArray.join();
+    }
 }
-Word.prototype.toString = function () {
-    console.log('hitting this function')
-    this.letterObjectsArray.join();
-}
+// Word.prototype.toString = function () {
+//     console.log('hitting this function')
+//     this.letterObjectsArray.join();
+//     // Letter.toString();
+// }
 
 module.exports = Word;
