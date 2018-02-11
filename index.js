@@ -10,7 +10,7 @@ function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
     var chosenWord = wordsDude[wordIndex];
     var word = new Word(chosenWord);
-    word.toString();
+    word.isVisibleCheck();
 }
 chooseWord();
 inquirer.prompt([
@@ -20,4 +20,4 @@ inquirer.prompt([
     }
 ]).then(function (answers) {
     var char = answers.guessedLetter;
-})
+});
