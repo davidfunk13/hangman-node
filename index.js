@@ -33,20 +33,25 @@ function chooseWord() {
     globalWordObject = word
 }
 function runPrompt() {
-    if (guesses > 0) {
-        inquirer.prompt([
-            {
-                name: "guessedLetter",
-                message: 'Please Guess a Letter'
-            }
-        ]).then(function (answers) {
-            var char = answers.guessedLetter;
-            globalWordObject.passLetter(char)
-            globalWordObject.isVisibleCheck()
-            livesRemaining(char)
-            runPrompt()
-
-        });
+    if (globalWordObject.winToggle === false) {
+        if (guesses > 0) {
+            inquirer.prompt([
+                {
+                    name: "guessedLetter",
+                    message: 'Please Guess a Letter'
+                }
+            ]).then(function (answers) {
+                var char = answers.guessedLetter;
+                globalWordObject.passLetter(char)
+                globalWordObject.isVisibleCheck()
+                livesRemaining(char)
+                runPrompt()
+            });
+        }
+    }
+    if (globalWordObject.winToggle === true) {
+        console.log
+        console.log('..........................\nYOU WIN\n............................')
     }
 }
 chooseWord();

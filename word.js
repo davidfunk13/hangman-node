@@ -10,14 +10,10 @@ var Word = function (chosenWord) {
         }
         console.log(returnedChars.join(" "));
         var currentWordStatus = Array.from(returnedChars);
-        // console.log(currentWordStatus)
         if (currentWordStatus.includes('_')){
-            // console.log('more characters remaining');
         }
         if (!currentWordStatus.includes('_')) {
-            console.log('YOU WIN!!!!!');
-            console.log('..................')
-            return;
+            this.winToggle = true;
         }
 
     }
@@ -26,6 +22,7 @@ var Word = function (chosenWord) {
             this.letterObjectsArray[i].setBoolean(char);
         }
     }
+    this.winToggle = false;
 }
 
 module.exports = Word;
