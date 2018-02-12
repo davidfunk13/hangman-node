@@ -9,7 +9,6 @@ var Letter = function (char) {
         return ('_');
     }
     this.setBoolean = function (char) {
-        // console.log(`made it to boolean with ${char}`)
         if (char === this.stringValue){
             console.log('ayo')
         }
