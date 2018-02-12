@@ -8,15 +8,18 @@ var guesses = 10;
 function livesRemaining(char) {
     var checkArray = Array.from(globalWordObject.word)
     var instance = 0;
-    if (checkArray.includes(char)) {
-        console.log(`Correct! Word includes the letter ${char}. ${guesses} lives remaining.`)
+    if (guesses > 0) {
+        if (checkArray.includes(char)) {
+            console.log(`Correct! Word includes the letter ${char}. ${guesses} lives remaining.`)
+        }
+        if (!checkArray.includes(char)) {
+            guesses--
+            console.log(`Word does not contain the letter ${char}. ${guesses} lives remaining`)
+        }
     }
-    if (!checkArray.includes(char)) {
-        guesses--
-        console.log(`Word does not contain the letter ${char}. ${guesses} lives remaining`)
-    }
+
     if (guesses <= 0) {
-        console.log('GAME OVER');
+        console.log(`..................\nGAME OVER\n...................\n\n The word was "${globalWordObject.word}"`);
     }
 }
 function chooseWord() {
@@ -41,7 +44,7 @@ function runPrompt() {
                     message: 'Please Guess a Letter'
                 }
             ]).then(function (answers) {
-                var char = answers.guessedLetter;
+                var char = answers.guessedLetter.toLowerCase();
                 globalWordObject.passLetter(char)
                 globalWordObject.isVisibleCheck()
                 livesRemaining(char)
@@ -50,7 +53,6 @@ function runPrompt() {
         }
     }
     if (globalWordObject.winToggle === true) {
-        console.log
         console.log('..........................\nYOU WIN\n............................')
     }
 }
