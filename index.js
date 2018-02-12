@@ -12,7 +12,6 @@ function livesRemaining(char) {
         console.log(`Correct! Word includes the letter ${char}. ${guesses} lives remaining.`)
     }
     if (!checkArray.includes(char)) {
-        // console.log('nah yo')
         guesses--
         console.log(`Word does not contain the letter ${char}. ${guesses} lives remaining`)
     }
@@ -42,20 +41,9 @@ function runPrompt() {
             }
         ]).then(function (answers) {
             var char = answers.guessedLetter;
-            // word.passLetter(char)
             globalWordObject.passLetter(char)
             globalWordObject.isVisibleCheck()
             livesRemaining(char)
-            // globalWordObject.isGameComplete()
-            // var checkArray = Array.from(globalWordObject.word);
-            // for (var i = 0; i < checkArray.length; i++) {
-            //     if (checkArray[i])
-            // }
-            // guesses--
-            // console.log(`You have ${guesses} guesses remaining`)
-            // if (guesses === 0) {
-            //     console.log('game over')
-            // }
             runPrompt()
 
         });
