@@ -5,7 +5,19 @@ var prompt = require('prompt');
 var wordsDude = ['mancheetah', 'spaceship', 'foobar', 'guitar', 'game', 'constructor', 'bulletproof', 'controller', 'instructions', 'annotated',];
 var globalWordObject = [];
 var guesses = 10;
-
+function livesRemaining(char) {
+    var checkArray = Array.from(globalWordObject.word)
+    console.log(checkArray)
+    var instance = 0;
+if (checkArray.includes(char)) {
+    console.log(`Correct! Word includes the letter ${char}. ${guesses} lives remaining.`)
+}
+    if (!checkArray.includes(char)) {
+        console.log('nah yo')
+        guesses--
+        console.log(`Word does not contain the letter ${char}. ${guesses} lives remaining`)
+    }
+}
 function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
     var chosenWord = wordsDude[wordIndex];
@@ -28,39 +40,24 @@ function runPrompt() {
     ]).then(function (answers) {
         var char = answers.guessedLetter;
         // word.passLetter(char)
-        console.log(char)
         globalWordObject.passLetter(char)
         globalWordObject.isVisibleCheck()
-        guesses--
-        console.log(`You have ${guesses} guesses remaining`)
-        if (guesses === 0) {
-            console.log('game over')
-        }
+        livesRemaining(char)
+        // var checkArray = Array.from(globalWordObject.word);
+        // for (var i = 0; i < checkArray.length; i++) {
+        //     if (checkArray[i])
+        // }
+        // guesses--
+        // console.log(`You have ${guesses} guesses remaining`)
+        // if (guesses === 0) {
+        //     console.log('game over')
+        // }
         runPrompt()
+
     });
 }
 chooseWord();
 runPrompt();
-function livesRemaining (char) {
-    var checkArray = Array.from(globalWordObject)
-    console.log(checkArray)
-    var instance = 0;
-    for (var i = 0; i < checkArray.length; i++) {
-        if (char === checkArray[i]) {
-            instance++
-            if (instance >= 1) {
-                console.log('no lives lost')
-                runPrompt();
-            }
-            if (instance === 0) {
-                console.log(`Does not contain ${char}, guess again. Minus one life.`);
-                lives--;
-                console.log(`You have ${lives} remaining.`)
-            }
-        }
-    }
-}
-
 
 
 
