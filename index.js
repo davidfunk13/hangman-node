@@ -4,7 +4,7 @@ var inquirer = require('inquirer');
 var prompt = require('prompt');
 var wordsDude = ['mancheetah', 'spaceship', 'foobar', 'guitar', 'game', 'constructor', 'bulletproof', 'controller', 'instructions', 'annotated',];
 var globalWordObject = [];
-var guesses = 5;
+var guesses = 10;
 
 function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
@@ -31,6 +31,11 @@ function runPrompt() {
         console.log(char)
         globalWordObject.passLetter(char)
         globalWordObject.isVisibleCheck()
+        guesses--
+        console.log(`You have ${guesses} guesses remaining`)
+        if (guesses === 0) {
+            console.log('game over')
+        }
         runPrompt()
     });
 }
