@@ -27,5 +27,5 @@ inquirer.prompt([
     var char = answers.guessedLetter;
     // word.passLetter(char)
     console.log(char)
-    console.log(Word.word)
+    globalWordObject.passLetter(char)
 });

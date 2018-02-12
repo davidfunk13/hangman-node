@@ -9,11 +9,15 @@ var Letter = function (char) {
         return ('_');
     }
     this.setBoolean = function (char) {
-        if (!this.isVisible) {
-            console.log('setboolean function hit')
-            this.isVisible = true;
-            console.log(`Boolean ${this.isVisible}`);
+        console.log(`made it to boolean with ${char}`)
+        if (char === this.stringValue){
+            console.log('ayo')
         }
+        // if (!this.isVisible) {
+        //     console.log('setboolean function hit')
+        //     this.isVisible = true;
+        //     console.log(`Boolean ${this.isVisible}`);
+        // }
 
     }
 }
