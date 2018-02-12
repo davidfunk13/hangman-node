@@ -11,7 +11,7 @@ var Word = function (chosenWord) {
         console.log(returnedChars.join(" "))
     }
     this.passLetter = function (char) {
-        console.log(`Checking ${char}`);
+        // console.log(`Checking ${char}`);
         for (var i = 0; i < this.letterObjectsArray.length; i++) {
             this.letterObjectsArray[i].setBoolean(char);
         }

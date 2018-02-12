@@ -9,14 +9,9 @@ var Letter = function (char) {
         return ('_');
     }
     this.setBoolean = function (char) {
-        console.log(char)
+        // console.log(char)
         if (char === this.stringValue){
             this.isVisible = true;
-            console.log(this.isVisible)
-            
-        }
-        if (char !== this.stringValue) {
-            console.log('no dice')
         }
         // if (!this.isVisible) {
         //     console.log('setboolean function hit')
