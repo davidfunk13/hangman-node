@@ -3,7 +3,7 @@ var Letter = require('./letter.js');
 var Word = function (chosenWord) {
     this.word = chosenWord;
     this.letterObjectsArray = [];
-    this.isVisibleCheck = function (hello) {
+    this.isVisibleCheck = function () {
         var returnedChars = [];
         for (var i = 0; i < this.letterObjectsArray.length; i++) {
            returnedChars.push(this.letterObjectsArray[i].revealCharacter());

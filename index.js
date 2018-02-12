@@ -3,11 +3,11 @@ var Word = require('./word.js');
 var inquirer = require('inquirer');
 var prompt = require('prompt');
 var wordsDude = ['mancheetah', 'spaceship', 'foobar', 'guitar', 'game', 'constructor', 'bulletproof', 'controller', 'instructions', 'annotated',];
+var globalWordObject = [];
 function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
     var chosenWord = wordsDude[wordIndex];
     var word = new Word(chosenWord);
-    // word.isVisibleCheck();
     var charArray = Array.from(word.word);
     console.log(charArray)
     for (var i = 0; i < charArray.length; i++) {
@@ -15,6 +15,7 @@ function chooseWord() {
         word.letterObjectsArray.push(newLetter);
     }
     word.isVisibleCheck();
+    globalWordObject = word
 }
 chooseWord();
 inquirer.prompt([
@@ -24,5 +25,7 @@ inquirer.prompt([
     }
 ]).then(function (answers) {
     var char = answers.guessedLetter;
-    // for (var i = 0; )
+    // word.passLetter(char)
+    console.log(char)
+    console.log(Word.word)
 });
