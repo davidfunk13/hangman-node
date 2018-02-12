@@ -28,4 +28,6 @@ inquirer.prompt([
     // word.passLetter(char)
     console.log(char)
     globalWordObject.passLetter(char)
+    globalWordObject.isVisibleCheck()
+    // globalWordObject.isVisibleCheck();
 });
