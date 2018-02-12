@@ -9,14 +9,12 @@ function chooseWord() {
     var word = new Word(chosenWord);
     // word.isVisibleCheck();
     var charArray = Array.from(word.word);
-    var letterObjects = [];
-
-    console.log(charArray)  
+    console.log(charArray)
     for (var i = 0; i < charArray.length; i++) {
         var newLetter = new Letter(charArray[i]);
-        letterObjects.push(newLetter);
+        word.letterObjectsArray.push(newLetter);
     }
-    console.log(letterObjects)
+    word.isVisibleCheck();
 }
 chooseWord();
 inquirer.prompt([

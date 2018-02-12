@@ -1,12 +1,12 @@
 var Letter = function (char) {
     this.stringValue = char;
     this.isVisible = false;
-    this.revealCharacter = function (char) {
+    this.revealCharacter = function (hello) {
         if (this.isVisible) {
             console.log('letter to string function hit')
             return this.stringValue;
         }
-        return '_';
+        return ('_');
     }
     this.setBoolean = function (char) {
         if (!this.isVisible) {
