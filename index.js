@@ -7,7 +7,16 @@ function chooseWord() {
     var wordIndex = Math.floor(Math.random() * 9) + 1;
     var chosenWord = wordsDude[wordIndex];
     var word = new Word(chosenWord);
-    word.isVisibleCheck();
+    // word.isVisibleCheck();
+    var charArray = Array.from(word.word);
+    var letterObjects = [];
+
+    console.log(charArray)  
+    for (var i = 0; i < charArray.length; i++) {
+        var newLetter = new Letter(charArray[i]);
+        letterObjects.push(newLetter);
+    }
+    console.log(letterObjects)
 }
 chooseWord();
 inquirer.prompt([
