@@ -15,6 +15,12 @@ var Word = function (chosenWord) {
         }
         console.log(charReturns.join(" "))
     }
+    this.passLetter = function (char) {
+        console.log(`Checking ${char}`);
+        for (var i = 0; i < letterObjectsArray.length; i++) {
+            console.log(letterObjectsArray[i])
+        }
+    }
 }
 
 module.exports = Word;
